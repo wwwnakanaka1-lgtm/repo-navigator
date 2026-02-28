@@ -59,7 +59,7 @@ export default async function Home() {
         <MetricTile label="Critical" value={stats.criticalCount} suffix="" />
       </div>
 
-      <div className="mt-6 grid gap-4 lg:grid-cols-3">
+      <div className="mt-6 grid items-start gap-4 lg:grid-cols-3">
         <SectionCard
           className="lg:col-span-2"
           title="Project Health Distribution"
@@ -69,7 +69,7 @@ export default async function Home() {
         </SectionCard>
 
         <SectionCard title="Top 3 Priority Actions" description="Execute from top to bottom.">
-          <ActionList actions={actions.slice(0, 3)} />
+          <ActionList actions={actions.slice(0, 3)} compact />
         </SectionCard>
       </div>
 

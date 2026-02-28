@@ -32,9 +32,46 @@ const IMPACT_GUIDE: Record<ActionItem["impact"], string[]> = {
   ],
 };
 
-export function ActionList({ actions }: Readonly<{ actions: ActionItem[] }>) {
+type ActionListProps = {
+  actions: ActionItem[];
+  compact?: boolean;
+};
+
+export function ActionList({ actions, compact = false }: Readonly<ActionListProps>) {
   if (actions.length === 0) {
     return <p className="text-sm text-slate-600">No prioritized actions are available right now.</p>;
+  }
+
+  if (compact) {
+    return (
+      <div className="space-y-2.5">
+        {actions.map((action, index) => (
+          <article
+            key={action.id}
+            className={`surface-card-strong rounded-xl border p-3 text-slate-800 transition-all duration-200 hover:-translate-y-[1px] hover:shadow-[0_10px_20px_rgba(15,23,42,0.08)] ${IMPACT_STYLE[action.impact]}`}
+          >
+            <div className="flex items-center justify-between gap-2">
+              <p
+                className={`text-[11px] font-semibold uppercase tracking-[0.14em] ${IMPACT_BADGE_STYLE[action.impact]}`}
+              >
+                {action.impact} impact
+              </p>
+              <span className="text-[11px] font-semibold text-slate-600">#{index + 1}</span>
+            </div>
+
+            <h3 className="mt-1.5 text-sm font-semibold tracking-tight text-slate-900">{action.title}</h3>
+            <p className="mt-1 text-xs leading-relaxed text-slate-700">{action.description}</p>
+
+            <div className="mt-2 flex items-center justify-between text-xs text-slate-600">
+              <Link href={`/projects/${action.projectId}`} className="font-semibold text-slate-800 underline">
+                {action.projectName}
+              </Link>
+              <span className="font-semibold text-slate-700">+{action.scoreDeltaEstimate}pt</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    );
   }
 
   return (
