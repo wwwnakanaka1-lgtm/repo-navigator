@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Repo Navigator favicon">
+  <defs>
+    <linearGradient id="rn-frame" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f2748" />
+      <stop offset="1" stop-color="#0b1630" />
+    </linearGradient>
+    <radialGradient id="rn-orb" cx="36%" cy="30%" r="74%">
+      <stop offset="0" stop-color="#233f67" />
+      <stop offset="1" stop-color="#10233f" />
+    </radialGradient>
+    <radialGradient id="rn-flare" cx="86%" cy="86%" r="42%">
+      <stop offset="0" stop-color="#ffa26a" />
+      <stop offset="0.58" stop-color="#ef6a2f" />
+      <stop offset="1" stop-color="rgba(239,106,47,0)" />
+    </radialGradient>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#rn-frame)" />
+  <circle cx="32" cy="32" r="21.5" fill="url(#rn-orb)" />
+  <circle cx="32" cy="32" r="21.5" fill="url(#rn-flare)" />
+  <circle cx="32" cy="32" r="21.5" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.2" />
+
+  <text
+    x="32"
+    y="37.1"
+    fill="#f8fbff"
+    font-family="'IBM Plex Sans', 'Segoe UI', sans-serif"
+    font-size="18"
+    font-weight="700"
+    letter-spacing="-0.6"
+    text-anchor="middle"
+  >
+    RN
+  </text>
+</svg>

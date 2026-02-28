@@ -17,6 +17,15 @@ const monoFont = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Repo Navigator",
   description: "Multi-repository risk triage for winning execution speed.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml", sizes: "any" },
+      { url: "/icon-192.svg", type: "image/svg+xml", sizes: "192x192" },
+      { url: "/icon-512.svg", type: "image/svg+xml", sizes: "512x512" },
+    ],
+    shortcut: ["/icon.svg"],
+    apple: [{ url: "/icon-192.svg", type: "image/svg+xml", sizes: "192x192" }],
+  },
 };
 
 const THEME_INIT_SCRIPT = `
@@ -40,6 +49,9 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
+        <link rel="shortcut icon" href="/icon.svg" />
+        <link rel="apple-touch-icon" href="/icon-192.svg" />
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
       <body className={`${displayFont.variable} ${monoFont.variable} antialiased`}>
